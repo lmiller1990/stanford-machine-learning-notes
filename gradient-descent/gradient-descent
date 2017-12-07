@@ -1,6 +1,34 @@
 # Linear Regression with one variable
 
 - Gradient Descent is useful for minimizing cost function.
+- Combine with cost function and we get an algo for linear regression.
+- Use partial derivatives + multivar calc.
+- "Batch" gradient descent - each step of gradient descent uses all the training examples
 
+In the example where we predict Portland house prices:
+Size in feet - x axis
+Price in 1000's - y axis
 
+## Notation in linear regression
+M - number of training examples
+x's - input var/features
+y's - output variable/target 
 
+## Univariate linear regression
+Linear regression with one variable.
+
+We can use minimize the difference using a cost function such as av. difference of squares.
+
+## Gradient Descent
+Basically:
+
+0. Have some function J(theta0, theta1), want minimum
+1. Start with theta0 theta1
+2. Keep changing theta0 theta1 to reduce J()
+3. Hopefully we get minimum
+*Simutaneous updates*
+
+Need to choose a good alpha (learning rate) value. 
+- too small, it's slow
+- too large, overshoot and won't converge
+- fixed is okay.
