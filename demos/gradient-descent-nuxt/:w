@@ -1,0 +1,39 @@
+export default {
+  data () {
+    return {
+      M: 10,
+      ALPHA: 0.0001,
+      data: [],
+      x: [],
+      y: []
+    }
+  },
+
+  created () {
+    for (let i = 0; i < this.M; i++) {
+      this.data.push(this.createRandomHouse())
+    }
+
+    this.x = [...this.data.map(data => data.squareMeter)]
+    this.y = [...this.data.map(data => data.price)]
+  },
+
+  methods: {
+    getRandomIntFromInterval (min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    },
+
+    createRandomHouse () {
+      return {
+        squareMeter: this.getRandomIntFromInterval(0, 100),
+        price: this.getRandomIntFromInterval(0, 100)
+      }
+    },
+
+    render () {
+      return (
+        <div>
+        </div>
+      )
+    }
+  }
