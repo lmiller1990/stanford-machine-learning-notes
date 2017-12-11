@@ -9,7 +9,7 @@ export default {
 
   data () {
     return {
-      ALPHA: 0.0001,
+      ALPHA: 0.0005,
       x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       y: [-890, -1411, -1560, -2220, -2091, -2878, -3537, -3268, -3920, -4163, -5471, -5157],
       points: []
@@ -26,7 +26,7 @@ export default {
     return (
       <div>
         <Features x={this.x} y={this.y} />
-        <Graph points={this.points} />
+        <Graph learningRate={this.ALPHA} points={this.points} />
       </div>
     )
   }

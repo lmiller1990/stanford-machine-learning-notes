@@ -11,7 +11,7 @@ import GradientDescent from '~/components/GradientDescent'
 
 export default {
   components: {
-    GradentDescent
+    GradientDescent
   }
 }
 </script>
