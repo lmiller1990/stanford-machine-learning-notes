@@ -1,0 +1,30 @@
+# Multivariate linear regression
+
+## Feature Scaling
+
+Ideally, you can get better results and help gradient descent converge more quickly if you use feature scaling.
+
+Concretely, say we have 
+
+x1 = size (ft): range 0 - 2000
+x2 = # rooms: range 1 - 5
+
+A nice range is -1 < x < 1
+
+So, we can instead say:
+
+x1 = size / 2000
+x2 = rooms / 5
+
+Or, feature / max
+
+## Mean Normalization
+
+The above can be further improved by doing:
+
+feature - average / max.
+
+## Example
+x1 = age in years. Houses between 30-50 yrs old. So,
+
+x1 <- (rooms - 38) / 20
