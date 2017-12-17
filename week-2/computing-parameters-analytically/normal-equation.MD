@@ -4,10 +4,12 @@
 - Normal equation can solve analytically - no need to learn and iterate constnantly.
 - For some quadratic cost function, how to you minimize?
 - Take derivative wrt the param theta, and set to 0, then solve.
+- Doing is this way means you do not need to bother with Feature Scaling.
 
 # Equation
 
 theta = inv(X_transpose X) * X_transpose y
+In octave: pinv(X' * X) * X' * y
 
 ## Example
 Say I have this data:
@@ -34,3 +36,23 @@ y = [
 ]
 
 Remember, we add x0 = 1 for all training sets.
+
+# When to use Grad Desc and Normal Equation
+
+_m_ training examples, _n_ features.
+
+Grad:
+- need to choose learning rate alpha
+- needs many iterations
+- works for large values of _n_
+
+Norm:
+- don't need alpha
+- don't need to iterate
+- need to compute inv(X_transpose X), which is o(n^3)...slow.
+- does not work well for large values of _n_ 
+
+## What is a large n?
+
+< 10000, can use normal equation.
+Greater than that, maybe linear regression is a good choice.
