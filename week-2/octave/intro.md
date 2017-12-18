@@ -21,3 +21,11 @@ w = randn(1, 2) % gaussian distribution
 
 w = -6 + (sqrt(10) * (randn(1, 10000))
 hist(w) % draw graph, very useful
+
+eye(3) % identity mat
+
+1 0 0
+0 1 0
+0 0 1
+
+help eye % get help
