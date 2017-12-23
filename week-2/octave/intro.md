@@ -47,6 +47,9 @@ clear % clear all
 `save hello.mat x v` % save variable x to hello.mat compressed
 `save hello.txt x v -ascii` % save human readable
 
+## Loading
+data = load('ex1dat1.txt') % read csv
+
 A =
 1 2
 3 4
