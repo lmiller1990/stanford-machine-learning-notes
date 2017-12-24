@@ -14,8 +14,18 @@ J = 0;
 %               You should set J to the cost.
 
 prediction = X * theta;
-error = (prediction - y) .^2;
-J = 1 / (2 * m) * sum(error);
+diff = (prediction - y);
+
+error = diff .^ 2;
+
+
+s = 0;
+for iter = 1:size(error);
+  s = s + error(iter);
+end
+
+
+J = 1 / (2 * m) * s % sum(error);
 
 
 %cost () {

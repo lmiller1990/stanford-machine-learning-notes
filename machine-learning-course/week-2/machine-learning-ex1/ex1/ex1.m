@@ -38,8 +38,10 @@ pause;
 
 %% ======================= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
-data = load('ex1data1.txt');
-X = data(:, 1); y = data(:, 2);
+% data = load('ex1data1.txt');
+data = load('mine.txt');
+X = data(:, 1); 
+y = data(:, 2);
 m = length(y); % number of training examples
 
 % Plot Data
