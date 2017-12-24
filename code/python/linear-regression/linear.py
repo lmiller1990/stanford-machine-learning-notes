@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 path = os.getcwd() + '/population-profit.txt'
 data = pd.read_csv(path, header=None, names=['Population', 'Profit'])
+# data = (data - data.mean()) / data.std()
 
 def computeCost(X, y, theta):
     inner = np.power((X * theta.T) - y, 2)
@@ -52,7 +53,7 @@ g, cost = gradientDescent(X, y, theta, alpha, iters)
 
 print(g)
 
-print(g[0, 0] + (g[0, 1] * 12))
+print(g[0, 0] + (g[0, 1] * 5.4))
 # graph
 
 x = np.linspace(data.Population.min(), data.Population.max(), 100)
