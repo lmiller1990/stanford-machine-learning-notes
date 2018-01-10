@@ -41,6 +41,9 @@ ax.plot(2.5, _y5, marker='x', markersize=3, color="red")
 
 ax.plot([-0.5, 0.5, 1, 1.5, 2, 2.5], [_y0, _y2, _y1, _y3, _y4, _y5])
 
+ax.set_xlabel('theta1') 
+ax.set_ylabel('J(theta1)') 
+
 ax.set_ylim(ymin=0, ymax=4)
 ax.set_xlim(xmin=0, xmax=4)
 plt.show()
