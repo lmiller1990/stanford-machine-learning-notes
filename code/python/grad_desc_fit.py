@@ -6,9 +6,6 @@ import matplotlib.pyplot as plt
 path = os.getcwd() + '/food_dataset.txt'  
 data = pd.read_csv(path, header=None, names=['Population', 'Profit'])  
 
-data.plot(kind='scatter', x='Population', y='Profit', figsize=(12,8))  
-# plt.show()
-
 # insert row of 1s
 data.insert(0, 'Ones', 1)
 
@@ -32,7 +29,37 @@ def get_cost (X, y, theta):
     inner = np.power(((X * theta.T) - y), 2)
     return np.sum(inner) / (2 * len(X))
 
-cost = get_cost(X, y, theta)
 
-print(cost)
+def gradient_descent(X, y, theta, alpha, iters):
+    temp = np.matrix(np.zeros(theta.shape)) # [[0, 0]]
+    parameters = int(theta.ravel().shape[1]) # 2, number of params
+    cost = np.zeros(iters) # cost - should get closer to  0 as we go
+
+    for i in range(iters):
+        error = (X * theta.T) - y
+
+        for j in range(parameters):
+            term = np.multiply(error, X[:,j])
+            temp[0,j] = theta[0,j] - ((alpha / len(X)) * np.sum(term))
+
+
+        theta = temp
+        cost[i] = get_cost(X, y, theta)
+
+    return theta, cost
+
+alpha = 0.01
+iters = 1000
+
+g, cost = gradient_descent(X, y, theta, alpha, iters)  
+
+x = np.linspace(data.Population.min(), data.Population.max(), 100)  
+f = g[0, 0] + (g[0, 1] * x)
+
+fig, ax = plt.subplots(figsize=(12,8))
+ax.plot(x, f, 'r', label='Prediction')
+ax.scatter(data.Population, data.Profit, label='Training Data')
+ax.legend(loc=2)
+
+plt.show()
 
