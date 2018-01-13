@@ -5,10 +5,24 @@ import math
 def sigmoid(x): 
     return 1 / (1 + np.exp(-x))
 
-x = np.linspace(-10, 10, 100)  
+def negative_log(x):
+    return np.log(x) * -1
+
+def one_minus_negative_log(x):
+    return np.log(1-x) * -1
+
+x = np.linspace(-50, 50, 10)  
 f = list(map(sigmoid, x))
 
-fig, ax = plt.subplots(figsize=(12,8))
-ax.plot(x, f, 'r')
+x = np.linspace(-1, 1, 100, endpoint=True)
+# y = np.sqrt(-x**2. + 0.6)
+
+# plt.plot(x, y)
+# plt.plot(x, -y)
+
+fig, ax = plt.subplots(2, 2)
+# ax.plot(x, list(map(sigmoid, x)), 'r')
+ax[0, 0].plot(x, list(map(negative_log, x)), 'r')
+ax[0, 1].plot(x, list(map(one_minus_negative_log, x)), 'r')
 
 plt.show()
