@@ -56,6 +56,10 @@ g, cost = gradient_descent(X, y, theta, alpha, iters)
 x = np.linspace(data.Population.min(), data.Population.max(), 100)  
 f = g[0, 0] + (g[0, 1] * x)
 
+a = 5.4
+print(g)
+print(g[0, 0] + g[0,1]*a) # make a prediction
+
 fig, ax = plt.subplots(figsize=(12,8))
 ax.plot(x, f, 'r', label='Prediction')
 ax.scatter(data.Population, data.Profit, label='Training Data')
