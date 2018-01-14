@@ -15,6 +15,7 @@ x = np.linspace(-50, 50, 10)
 f = list(map(sigmoid, x))
 
 x = np.linspace(-1, 1, 100, endpoint=True)
+# or we can use x = np.arrange(-1, 1, step=0.1)
 # y = np.sqrt(-x**2. + 0.6)
 
 # plt.plot(x, y)
