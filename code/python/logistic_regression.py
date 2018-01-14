@@ -4,7 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.optimize as opt  
 
-
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 
