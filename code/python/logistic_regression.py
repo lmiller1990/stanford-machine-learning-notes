@@ -13,9 +13,9 @@ def cost(theta, X, y):
     X = np.matrix(X)
     y = np.matrix(y)
     # hypothesis is sigmoid where z = theta.T * x
-    first = np.multiply(-y, np.log(sigmoid(X * theta.T)))
+    first = np.multiply(y, np.log(sigmoid(X * theta.T)))
     second = np.multiply((1 - y), np.log(1 - sigmoid(X * theta.T)))
-    return np.sum(first - second) / len(X)
+    return np.sum(first + second) / -len(X)
 
 path = os.getcwd() + '/exams_data.txt'  
 data = pd.read_csv(path, header=None, names=['Exam 1', 'Exam 2', 'Admitted'])  
@@ -53,7 +53,6 @@ def gradient(theta, X, y):
 def predict(theta, X):  
     probability = sigmoid(X * theta.T)
     return [1 if x >= 0.5 else 0 for x in probability]
-
 
 result = opt.fmin_tnc(func=cost, x0=theta, fprime=gradient, args=(X, y))  
 theta_min = np.matrix(result[0])  
