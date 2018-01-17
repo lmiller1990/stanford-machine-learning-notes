@@ -50,3 +50,37 @@ np.exp(arr)
 np.max(arr) # get max 
 np.sin(arr) 
 
+
+# Exercises
+# array of 10 zeros
+np.zeros(10)
+
+# array of 10 ones
+np.ones(10)
+
+# array of 10 fives
+np.full(10, 5) 
+# or
+a = np.empty(10)
+a.fill(5)
+
+# array of ints from 10 to 50
+np.arange(10, 51)
+
+a = np.arange(10, 51)[]
+a[a % 2 == 1]
+
+# or a huge one liner.
+a = np.array(list(filter(lambda x: x % 2 == 0, arange(10, 51))))
+
+# 3x3 array from 0 to 8
+np.arange(0, 9).reshape(3, 3)
+
+# 3x3 identity matrix
+np.eye(3,3)
+
+# rand between 0 and 1
+np.random.rand()
+
+# 25 numbers standard norm. dist.
+np.random.randn(25)
