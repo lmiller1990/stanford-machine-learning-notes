@@ -27,4 +27,8 @@ X_train, X_Test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 
 lm = LinearRegression()
 lm.fit(X_train, y_train)
+print(lm.intercept_)
+print(lm.coef_)
 
+coeff_data_frame = pd.DataFrame(lm.coef_, X.columns, columns=['Coeff'])
+# coeff for each feature. Eg if coeff of 21, that means each unit of that feature is associated with a $21 increase in price
